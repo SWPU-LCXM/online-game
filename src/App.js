@@ -1,16 +1,38 @@
 import * as React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Pair from "./routes/Pair.tsx";
+
+const RouteList = [
+	{
+		path: "/",
+		exact: false,
+		component: Pair,
+	},
+];
 
 function App() {
 	return (
-		<main>
-			<div className="Header-Decoration"></div>
-			<div className="App">
-				<div className="App-header"></div>
-			</div>
-			<div className="Footer-Decoration"></div>
-		</main>
+		<Router>
+			<main>
+				<div className="Header-Decoration"></div>
+				<div id="content">
+					<Pair />
+					<Routes>
+						{RouteList.map((route, index) => (
+							<Route
+								key={index}
+								path={route.path}
+								exact={route.exact}
+								component={route.component}
+							/>
+						))}
+					</Routes>
+				</div>
+
+				<div className="Footer-Decoration"></div>
+			</main>
+		</Router>
 	);
 }
 

@@ -2,22 +2,25 @@ import * as React from "react";
 import styled from "styled-components";
 
 const Progress: React.FC<{ progress?: number }> = ({ progress = "1.0" }) => {
-	return <div></div>;
+	return (
+		<StyledProgress progress={progress}>
+			<div></div>
+		</StyledProgress>
+	);
 };
 
-const StyledProgress = styled(Progress)`
-	width: 100%;
-	height: 100%;
+const StyledProgress = styled.div`
+	width: 200px;
+	height: 30px;
 	background-color: #000;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 100;
-	opacity: 0.5;
-	transition: opacity 0.5s;
-	&.hidden {
-		opacity: 0;
+	border: 3px solid #fff;
+	border-radius: 5px;
+	& div {
+		transition: width 0.5s;
+		height: 100%;
+		background-color: red;
+		width: ${(props) => props.progress * 100}%;
 	}
 `;
 
-export default StyledProgress;
+export default Progress;

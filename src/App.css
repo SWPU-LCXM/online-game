@@ -44,10 +44,6 @@ dd {
 	color: white;
 }
 
-.App-link {
-	color: #61dafb;
-}
-
 @keyframes App-logo-spin {
 	from {
 		transform: rotate(0deg);
@@ -55,6 +51,10 @@ dd {
 	to {
 		transform: rotate(360deg);
 	}
+}
+
+html:focus-within {
+	scroll-behavior: smooth;
 }
 
 #root {
@@ -75,6 +75,14 @@ main {
 	main {
 		width: 100%;
 	}
+}
+
+#content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
 }
 
 .Header-Decoration {
