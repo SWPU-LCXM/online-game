@@ -10,11 +10,12 @@ const Progress: React.FC<{ progress?: number }> = ({ progress = "1.0" }) => {
 };
 
 const StyledProgress = styled.div`
-	width: 200px;
+	width: 290px;
 	height: 30px;
 	background-color: #000;
 	border: 3px solid #fff;
 	border-radius: 5px;
+	overflow: hidden;
 	& div {
 		transition: width 0.5s;
 		height: 100%;
